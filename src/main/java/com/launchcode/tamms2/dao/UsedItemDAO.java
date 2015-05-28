@@ -42,18 +42,31 @@ public class UsedItemDAO extends TammsDAO implements InventoryStrategy {
             return results.getInt("qty_used");
         }catch(SQLException e){
             e.printStackTrace();
-            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+            throw new RuntimeException("Error Occurred in: getQTY", e);
         }
     }
 
     @Override
     public void setPrice(String sku, double price) {
-
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("UPDATE price SET price_used = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+        }
     }
 
     @Override
     public double getPrice(String sku) {
-        return 0;
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT price_used FROM price WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getDouble("price_used");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+        }
     }
 
     @Override

@@ -49,18 +49,17 @@ public class NewItemDAO extends TammsDAO implements InventoryStrategy {
     public void setPrice(String sku, double price) {
         try(Connection conn = this.getConnection()){
             PreparedStatement statement = conn.prepareStatement("UPDATE price SET price_new = " + price + " WHERE sku = '" + sku + "'");
-            ResultSet results = statement.executeQuery();
+            int d = statement.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
             throw new RuntimeException("Error Occurred in: addToQTYTable", e);
         }
-
     }
 
     @Override
     public double getPrice(String sku) {
         try(Connection conn = this.getConnection()){
-            PreparedStatement statement = conn.prepareStatement("SELECT price_new FROM qty WHERE sku = '" + sku + "'");
+            PreparedStatement statement = conn.prepareStatement("SELECT price_new FROM price WHERE sku = '" + sku + "'");
             ResultSet results = statement.executeQuery();
             return results.getDouble("price_new");
         }catch(SQLException e){

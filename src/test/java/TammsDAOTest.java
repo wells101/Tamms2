@@ -30,6 +30,7 @@ public class TammsDAOTest {
         testItem = new InventoryItem("255000334", "Pokemon:Red Version", "Game Boy", "NGB", "ADV");
         testItem.setPRICE(9.99);
     }
+
     @Test
     public void testGetSku() throws Exception{
         String result = dao.getTitle_1BySKU("100001");
@@ -103,5 +104,19 @@ public class TammsDAOTest {
     public void testAddPriceTable(){
         dao.addToPriceTable(testItem);
         assertEquals(true, dao.itemInTable(testItem.getSKU(), "price"));
+    }
+
+    @Test
+    public void testSetPriceNew(){
+        NIDAO.setPrice(testItem.getSKU(), 19.99);
+        double result = NIDAO.getPrice(testItem.getSKU());
+        assertEquals(19.99, result, 0);
+    }
+
+    @Test
+    public void testSetPriceUsed(){
+        UIDAO.setPrice(testItem.getSKU(), 19.99);
+        double result = UIDAO.getPrice(testItem.getSKU());
+        assertEquals(19.99, result, 0);
     }
 }
