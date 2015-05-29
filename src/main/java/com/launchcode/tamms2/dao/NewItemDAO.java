@@ -52,7 +52,7 @@ public class NewItemDAO extends TammsDAO implements InventoryStrategy {
             int d = statement.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
-            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+            throw new RuntimeException("Error Occurred in: setPrice", e);
         }
     }
 
@@ -64,17 +64,31 @@ public class NewItemDAO extends TammsDAO implements InventoryStrategy {
             return results.getDouble("price_new");
         }catch(SQLException e){
             e.printStackTrace();
-            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+            throw new RuntimeException("Error Occurred in: getPrice", e);
         }
     }
 
     @Override
     public void setCost(String sku, double price) {
 
+        try (Connection conn = this.getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("UPDATE costs SET cost_new = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: setCost", e);
+        }
     }
 
     @Override
     public double getCost(String sku) {
-        return 0;
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT cost_new FROM costs WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getDouble("cost_new");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: getCost", e);
+        }
     }
 }

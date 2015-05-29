@@ -1,18 +1,45 @@
 package com.launchcode.tamms2.models;
 
+import com.launchcode.tamms2.InventoryContext;
+import com.launchcode.tamms2.dao.TammsDAO;
+
 /**
  * Implements an Inventory Item in the Tamms2 Database.  Defaults Price to 0.01 and Used (NEW_ITEM = false), as most items
  * will enter the inventory as such.
  */
 public class InventoryItem{
-    private String SKU; //Primary Key in inventory
+    private String SKU; //Primary Key in inventory.db
     private String UPC;
     private String TITLE_1;
     private String TITLE_2;
     private String FORM_CODE;
     private String GENRE_CODE;
     private Double PRICE = 0.01;
+    private Double COST = 0.01;
     private boolean NEW_ITEM = false;
+    private InventoryContext strategy = new InventoryContext();
+
+    public InventoryItem() {
+    }
+
+    public InventoryItem(String SKU, char type){
+        if(type == 'U' || type == 'u'){
+            this.NEW_ITEM = false;
+        }
+        else{
+            this.NEW_ITEM = true;
+        }
+
+        this.SKU = SKU;
+        this.UPC = TammsDAO.getInstance().getUPCBySKU(this.getSKU());
+        this.TITLE_1 = TammsDAO.getInstance().getTitle_1BySKU(this.getSKU());
+        this.TITLE_2 = TammsDAO.getInstance().getTitle_2BySKU(this.getSKU());
+        this.FORM_CODE = TammsDAO.getInstance().getFORM_CODEBySKU(this.getSKU());
+        this.GENRE_CODE = TammsDAO.getInstance().getGENRE_CODEBySKU(this.getSKU());
+        this.PRICE = strategy.getPrice(this);
+        this.COST = strategy.getCost(this);
+
+    }
 
     public InventoryItem(String SKU, String TITLE_1, String TITLE_2, String FORM_CODE, String GENRE_CODE) {
         this.SKU = SKU;
@@ -20,9 +47,6 @@ public class InventoryItem{
         this.TITLE_2 = TITLE_2;
         this.FORM_CODE = FORM_CODE;
         this.GENRE_CODE = GENRE_CODE;
-    }
-
-    public InventoryItem() {
     }
 
     public InventoryItem(String SKU, String TITLE_1, String FORM_CODE, String GENRE_CODE, Double PRICE, boolean NEW_ITEM) {
@@ -122,6 +146,14 @@ public class InventoryItem{
 
     public void setUPC(String UPC) {
         this.UPC = UPC;
+    }
+
+    public Double getCOST() {
+        return COST;
+    }
+
+    public void setCOST(Double COST) {
+        this.COST = COST;
     }
 
     @Override

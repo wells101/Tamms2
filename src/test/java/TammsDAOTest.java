@@ -10,8 +10,6 @@ import com.launchcode.tamms2.models.InventoryItem;
 import org.junit.Test;
 import org.junit.Before;
 
-import java.rmi.server.UID;
-
 import static org.junit.Assert.assertEquals;
 
 public class TammsDAOTest {
@@ -29,6 +27,7 @@ public class TammsDAOTest {
         app = new TammsConsole();
         testItem = new InventoryItem("255000334", "Pokemon:Red Version", "Game Boy", "NGB", "ADV");
         testItem.setPRICE(9.99);
+        testItem.setCOST(4.50);
     }
 
     @Test
@@ -118,5 +117,29 @@ public class TammsDAOTest {
         UIDAO.setPrice(testItem.getSKU(), 19.99);
         double result = UIDAO.getPrice(testItem.getSKU());
         assertEquals(19.99, result, 0);
+    }
+
+    @Test
+    public void testAddCostTable(){
+        dao.addToCostsTable(testItem);
+        assertEquals(true, dao.itemInTable(testItem.getSKU(), "costs"));
+    }
+
+    @Test
+    public void testSetNewCosts(){
+        NIDAO.setCost(testItem.getSKU(), testItem.getCOST());
+        assertEquals(4.50, NIDAO.getCost(testItem.getSKU()), 0);
+    }
+
+    @Test
+    public void testSetUsedCosts(){
+        UIDAO.setCost(testItem.getSKU(), testItem.getCOST());
+        assertEquals(4.50, UIDAO.getCost(testItem.getSKU()), 0);
+    }
+
+    @Test
+    public void testGetUPCBySKU(){
+        String result = dao.getUPCBySKU("100005");
+        assertEquals("1234567890123", result);
     }
 }

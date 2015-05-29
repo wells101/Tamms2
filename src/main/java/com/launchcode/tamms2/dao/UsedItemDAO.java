@@ -72,10 +72,24 @@ public class UsedItemDAO extends TammsDAO implements InventoryStrategy {
     @Override
     public void setCost(String sku, double price) {
 
+        try (Connection conn = this.getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("UPDATE costs SET cost_used = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: setCost", e);
+        }
     }
 
-    @Override
-    public double getCost(String sku) {
-        return 0;
-    }
+        @Override
+        public double getCost(String sku) {
+            try(Connection conn = this.getConnection()){
+                PreparedStatement statement = conn.prepareStatement("SELECT cost_used FROM costs WHERE sku = '" + sku + "'");
+                ResultSet results = statement.executeQuery();
+                return results.getDouble("cost_used");
+            }catch(SQLException e){
+                e.printStackTrace();
+                throw new RuntimeException("Error Occurred in: getCost", e);
+            }
+        }
 }

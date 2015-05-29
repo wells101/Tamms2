@@ -69,6 +69,42 @@ public class TammsDAO {
         }
     }
 
+    public String getFORM_CODEBySKU(String sku){
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT form_code FROM items WHERE sku LIKE '" + sku + "'");
+            ResultSet myResults = statement.executeQuery();
+            return myResults.getString("form_code");
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
+    public String getGENRE_CODEBySKU(String sku){
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT genre_code FROM items WHERE sku LIKE '" + sku + "'");
+            ResultSet myResults = statement.executeQuery();
+            return myResults.getString("genre_code");
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
+    public String getUPCBySKU(String sku){
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT upc FROM UPC WHERE sku LIKE '" + sku + "'");
+            ResultSet myResults = statement.executeQuery();
+            return myResults.getString("upc");
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
     public void addItemWithSKU(InventoryItem item) {
         try(Connection conn = getConnection()){
             PreparedStatement statement = conn.prepareStatement("INSERT INTO items VALUES ('" + item.getSKU() + "', '" + item.getTITLE_1() + "', '" + item.getTITLE_2() + "', '" + item.getFORM_CODE() +"', '" + item.getGENRE_CODE() + "')");
@@ -193,6 +229,20 @@ public class TammsDAO {
         }catch(SQLException e){
             e.printStackTrace();
             throw new RuntimeException("Error Occurred in: addToPriceTable", e);
+        }
+    }
+
+    /**
+     * Add a new Item to the COST table, defaults to 0.01 New Price and 0.01 Used Price
+     * @param item an InventoryItem
+     */
+    public void addToCostsTable(InventoryItem item){
+        try(Connection conn = getConnection()){
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO costs VALUES('" + item.getSKU() + "',0.01,0.01)");
+            int d = statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToCostTable", e);
         }
     }
 }
