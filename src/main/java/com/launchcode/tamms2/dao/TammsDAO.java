@@ -105,6 +105,18 @@ public class TammsDAO {
         }
     }
 
+    public String getSKUByUPC(String UPC) {
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT sku FROM UPC WHERE upc LIKE '" + UPC + "'");
+            ResultSet myResults = statement.executeQuery();
+            return myResults.getString("sku");
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
     public void addItemWithSKU(InventoryItem item) {
         try(Connection conn = getConnection()){
             PreparedStatement statement = conn.prepareStatement("INSERT INTO items VALUES ('" + item.getSKU() + "', '" + item.getTITLE_1() + "', '" + item.getTITLE_2() + "', '" + item.getFORM_CODE() +"', '" + item.getGENRE_CODE() + "')");
@@ -142,6 +154,30 @@ public class TammsDAO {
         }catch(SQLException e){
             e.printStackTrace();
             throw new RuntimeException("Failure to Verify in itemInDatabase(), connection error", e);
+        }
+    }
+
+    public boolean upcInDatabase(String UPC){
+        try(Connection conn = getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT upc FROM UPC WHERE upc LIKE '" + UPC + "'");
+            ResultSet resultSet = statement.executeQuery();
+            List<String> results = new ArrayList<>();
+
+            while(resultSet.next()){
+                results.add(resultSet.getString("upc"));
+            }
+
+            if(results.size() > 0){
+                return true;
+            }
+
+            else{
+                return false;
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Failure to Verify in upcInDatabase(), connection error", e);
         }
     }
 
@@ -236,11 +272,11 @@ public class TammsDAO {
      * Add a new Item to the COST table, defaults to 0.01 New Price and 0.01 Used Price
      * @param item an InventoryItem
      */
-    public void addToCostsTable(InventoryItem item){
-        try(Connection conn = getConnection()){
+    public void addToCostsTable(InventoryItem item) {
+        try (Connection conn = getConnection()) {
             PreparedStatement statement = conn.prepareStatement("INSERT INTO costs VALUES('" + item.getSKU() + "',0.01,0.01)");
             int d = statement.executeUpdate();
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("Error Occurred in: addToCostTable", e);
         }

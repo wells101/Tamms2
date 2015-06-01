@@ -15,94 +15,47 @@ public class InventoryContext {
         this.myStrategy = strategy;
     }
 
-    public void sellItem(InventoryItem item){
+    private void determineStrategy(InventoryItem item){
         if(item.isNEW_ITEM()){
             setStrategy(NewItemDAO.getInstance());
         }
         else{
             setStrategy(UsedItemDAO.getInstance());
         }
-
-    }
-
-    public void buyItem(InventoryItem item){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
-        //Logic to buy Item
     }
 
     public void addToInventory(InventoryItem item){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
+        determineStrategy(item);
         //Logic to Add to Inventory
     }
 
     public double getPrice(InventoryItem item){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
-
+        determineStrategy(item);
         return myStrategy.getPrice(item.getSKU());
     }
 
     public void setPrice(InventoryItem item, double price){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
+        determineStrategy(item);
         myStrategy.setPrice(item.getSKU(), price);
     }
 
     public double getCost(InventoryItem item){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
+        determineStrategy(item);
         return myStrategy.getCost(item.getSKU());
     }
 
     public void setCost(InventoryItem item, double cost){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
+        determineStrategy(item);
         myStrategy.setCost(item.getSKU(), cost);
     }
 
     public int getQTY(InventoryItem item){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
+        determineStrategy(item);
         return myStrategy.getQTY(item.getSKU());
     }
 
     public void adjustQTY(InventoryItem item, int adjustedQTY){
-        if(item.isNEW_ITEM()){
-            setStrategy(NewItemDAO.getInstance());
-        }
-        else{
-            setStrategy(UsedItemDAO.getInstance());
-        }
+        determineStrategy(item);
         myStrategy.adjustQTY(item.getSKU(), adjustedQTY);
     }
 }

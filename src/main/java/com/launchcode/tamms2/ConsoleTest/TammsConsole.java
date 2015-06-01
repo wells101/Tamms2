@@ -1,4 +1,4 @@
-package com.launchcode.tamms2;
+package com.launchcode.tamms2.ConsoleTest;
 
 import java.util.List;
 import java.util.Scanner;
@@ -38,7 +38,7 @@ public class TammsConsole {
             System.out.println("Enter Format Code: ");
             printFormats();
             format = myScanner.nextLine();
-        }while(formats.contains(format) == false);
+        }while(!formats.contains(format));
         newItem.setFORM_CODE(format);
         //prompt for Genre Code, list Genre Codes
         String genre;
@@ -46,7 +46,7 @@ public class TammsConsole {
             System.out.println("Enter Genre Code: ");
             printGenres();
             genre = myScanner.nextLine();
-        }while(genres.contains(genre) == false);
+        }while(!genres.contains(genre));
         newItem.setGENRE_CODE(genre);
         //Verify all non-nulls are not null.
         if(newItem.isReadyToAdd()){

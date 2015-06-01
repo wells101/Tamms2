@@ -3,11 +3,13 @@ package com.launchcode.tamms2.models;
 import com.launchcode.tamms2.InventoryContext;
 import com.launchcode.tamms2.dao.TammsDAO;
 
+import java.util.Comparator;
+
 /**
  * Implements an Inventory Item in the Tamms2 Database.  Defaults Price to 0.01 and Used (NEW_ITEM = false), as most items
  * will enter the inventory as such.
  */
-public class InventoryItem{
+public class InventoryItem implements Comparable<InventoryItem>{
     private String SKU; //Primary Key in inventory.db
     private String UPC;
     private String TITLE_1;
@@ -20,6 +22,38 @@ public class InventoryItem{
     private InventoryContext strategy = new InventoryContext();
 
     public InventoryItem() {
+    }
+
+    /**
+     * Create a new item by UPC.  Buying an item ALWAYS uses the UPC.
+     * This is an external rule enforced by VStock management.
+     *
+     * Items received into the database as new items (Purchased by the Store from a vendor) use
+     * InventoryItem(String UPC, Boolean NEW_ITEM) constructor.
+     * @param UPC
+     */
+
+    public InventoryItem(String UPC){
+        //check to see if UPC is in database first.
+        if(TammsDAO.getInstance().upcInDatabase(UPC)){
+            //if it is, get the information using the SKU constructors
+            this.SKU = TammsDAO.getInstance().getSKUByUPC(UPC);
+            this.UPC = UPC;
+            this.TITLE_1 = TammsDAO.getInstance().getTitle_1BySKU(this.getSKU());
+            this.TITLE_2 = TammsDAO.getInstance().getTitle_2BySKU(this.getSKU());
+            this.FORM_CODE = TammsDAO.getInstance().getFORM_CODEBySKU(this.getSKU());
+            this.GENRE_CODE = TammsDAO.getInstance().getGENRE_CODEBySKU(this.getSKU());
+            this.PRICE = strategy.getPrice(this);
+            this.COST = strategy.getCost(this);
+        }
+       else{
+            this.SKU = Integer.toString(SKUManager.getInstance().generateSKU());
+            this.UPC = UPC;
+            //Otherwise, generate a default item with a new SKU.
+            //User must be prompted for the remaining information after using this constructor.
+            //Suggested to use isReadyToAdd(InventoryItem) method to check.
+        }
+
     }
 
     public InventoryItem(String SKU, char type){
@@ -70,8 +104,7 @@ public class InventoryItem{
     }
 
     /**
-     * Tests to see if an item is ready to add to the database.  Usable in conjunction with the addItemManual() and addItem()
-     * methods in TammsConsole class.
+     * Tests to see if an item is ready to add to the database.
      * @return
      */
 
@@ -160,5 +193,18 @@ public class InventoryItem{
     public String toString(){
         String result = "SKU: " + getSKU() + " Title: " + getTITLE_1() + " Author/System: " + getTITLE_2() + " Format Code: " + getFORM_CODE() + " Genre Code: " + getGENRE_CODE() + " Price: " + getPRICE();
         return result;
+    }
+
+    @Override
+    public int compareTo(InventoryItem item) {
+        if(item.getPRICE() == this.PRICE){
+            return 0;
+        }
+        else if(item.getPRICE() > this.PRICE){
+            return 1;
+        }
+        else{
+            return -1;
+        }
     }
 }
