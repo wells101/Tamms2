@@ -2,12 +2,12 @@
  * Created by Gaming on 5/22/2015.
  */
 
-import com.launchcode.tamms2.ConsoleTest.TammsConsole;
+import com.launchcode.tamms2.consoletest.TammsConsole;
 import com.launchcode.tamms2.dao.NewItemDAO;
 import com.launchcode.tamms2.dao.TammsDAO;
 import com.launchcode.tamms2.dao.UsedItemDAO;
-import com.launchcode.tamms2.models.InventoryItem;
-import com.launchcode.tamms2.models.SKUManager;
+import com.launchcode.tamms2.dataobjects.InventoryItem;
+import com.launchcode.tamms2.dataobjects.SKUManager;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -155,10 +155,17 @@ public class TammsDAOTest {
     public void testGenerateSKU(){
         SKUManager manager = new SKUManager();
         System.out.println(manager.generateSKU());
-    }
-
-    @Test
-    public void testCreateItemByUPC(){
-
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
+        System.out.println(manager.generateSKU());
     }
 }

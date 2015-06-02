@@ -1,7 +1,6 @@
 package com.launchcode.tamms2.dao;
 
 import com.launchcode.tamms2.InventoryStrategy;
-import com.launchcode.tamms2.models.InventoryItem;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

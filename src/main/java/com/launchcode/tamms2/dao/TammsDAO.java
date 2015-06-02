@@ -3,7 +3,7 @@ package com.launchcode.tamms2.dao;
 /**
  * Created by Gaming on 5/22/2015.
  */
-import com.launchcode.tamms2.models.InventoryItem;
+import com.launchcode.tamms2.dataobjects.InventoryItem;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -211,8 +211,9 @@ public class TammsDAO {
             ResultSet myResults = statement.executeQuery();
             List<String> results = new ArrayList<>();
             while(myResults.next()){
-                results.add(myResults.getString("form_code"));
-                results.add(myResults.getString("form_desc"));
+                results.add(myResults.getString("form_code") + " - " + myResults.getString("form_desc"));
+//                results.add(myResults.getString("form_code"));
+//                results.add(myResults.getString("form_desc"));
             }
             return results;
         }catch(SQLException e)
@@ -228,8 +229,9 @@ public class TammsDAO {
             ResultSet myResults = statement.executeQuery();
             List<String> results = new ArrayList<>();
             while(myResults.next()){
-                results.add(myResults.getString("genre_code"));
-                results.add(myResults.getString("genre_desc"));
+                results.add(myResults.getString("genre_code") + " - " + myResults.getString("genre_desc"));
+//                results.add(myResults.getString("genre_code"));
+//                results.add(myResults.getString("genre_desc"));
             }
             return results;
         }catch(SQLException e)

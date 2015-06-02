@@ -1,13 +1,13 @@
-package com.launchcode.tamms2.models;
+package com.launchcode.tamms2.dataobjects;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A list of items in a Transaction.
+ * A list of items in a Invoice.
  * Created by Gaming on 6/1/2015.
  */
-public class Transaction {
+public class Invoice {
 
     private List<InventoryItem> myItems = new ArrayList<>();
     private double total = 0.00;

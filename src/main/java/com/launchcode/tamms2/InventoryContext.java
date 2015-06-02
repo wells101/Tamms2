@@ -2,7 +2,7 @@ package com.launchcode.tamms2;
 
 import com.launchcode.tamms2.dao.NewItemDAO;
 import com.launchcode.tamms2.dao.UsedItemDAO;
-import com.launchcode.tamms2.models.InventoryItem;
+import com.launchcode.tamms2.dataobjects.InventoryItem;
 
 /**
  * Created by Gaming on 5/28/2015.

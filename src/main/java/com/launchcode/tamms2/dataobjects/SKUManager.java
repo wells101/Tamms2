@@ -1,4 +1,4 @@
-package com.launchcode.tamms2.models;
+package com.launchcode.tamms2.dataobjects;
 
 import com.launchcode.tamms2.dao.TammsDAO;
 

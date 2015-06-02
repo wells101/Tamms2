@@ -1,9 +1,7 @@
-package com.launchcode.tamms2.models;
+package com.launchcode.tamms2.dataobjects;
 
 import com.launchcode.tamms2.InventoryContext;
 import com.launchcode.tamms2.dao.TammsDAO;
-
-import java.util.Comparator;
 
 /**
  * Implements an Inventory Item in the Tamms2 Database.  Defaults Price to 0.01 and Used (NEW_ITEM = false), as most items
