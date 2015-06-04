@@ -1,6 +1,9 @@
-package com.launchcode.tamms2.ConsoleTest;
+package com.launchcode.tamms2.consoletest;
 
-import com.launchcode.tamms2.models.SKUManager;
+import com.launchcode.tamms2.controller.AddItemController;
+
+import com.launchcode.tamms2.models.AddItemTransaction;
+import com.launchcode.tamms2.view.AddItemView;
 
 /**
  * Created by Gaming on 5/25/2015.
@@ -8,9 +11,10 @@ import com.launchcode.tamms2.models.SKUManager;
 public class Tamms2 {
 
     public static void main(String[] args){
-        TammsConsole app = new TammsConsole();
-//        app.addItemManual();
-        SKUManager manager = new SKUManager();
-        System.out.println(manager.generateSKU());
+
+        AddItemView view = new AddItemView();
+        AddItemTransaction model = new AddItemTransaction();
+        AddItemController controller = new AddItemController(view, model);
+        controller.show();
     }
 }

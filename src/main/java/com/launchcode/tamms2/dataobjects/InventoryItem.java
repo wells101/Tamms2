@@ -1,6 +1,5 @@
 package com.launchcode.tamms2.dataobjects;
 
-import com.launchcode.tamms2.InventoryContext;
 import com.launchcode.tamms2.dao.TammsDAO;
 
 /**
@@ -14,10 +13,11 @@ public class InventoryItem implements Comparable<InventoryItem>{
     private String TITLE_2;
     private String FORM_CODE;
     private String GENRE_CODE;
-    private Double PRICE = 0.01;
-    private Double COST = 0.01;
+    private Double USED_PRICE = 0.01;
+    private Double NEW_PRICE = 0.01;
+    private Double USED_COST = 0.01;
+    private Double NEW_COST = 0.01;
     private boolean NEW_ITEM = false;
-    private InventoryContext strategy = new InventoryContext();
 
     public InventoryItem() {
     }
@@ -41,8 +41,10 @@ public class InventoryItem implements Comparable<InventoryItem>{
             this.TITLE_2 = TammsDAO.getInstance().getTitle_2BySKU(this.getSKU());
             this.FORM_CODE = TammsDAO.getInstance().getFORM_CODEBySKU(this.getSKU());
             this.GENRE_CODE = TammsDAO.getInstance().getGENRE_CODEBySKU(this.getSKU());
-            this.PRICE = strategy.getPrice(this);
-            this.COST = strategy.getCost(this);
+            this.NEW_PRICE = TammsDAO.getInstance().getNewPrice(this.getSKU());
+            this.NEW_COST = TammsDAO.getInstance().getNewCost(this.getSKU());
+            this.USED_PRICE = TammsDAO.getInstance().getUsedPrice(this.getSKU());
+            this.USED_COST = TammsDAO.getInstance().getUsedCost(this.getSKU());
         }
        else{
             this.SKU = Integer.toString(SKUManager.getInstance().generateSKU());
@@ -51,25 +53,6 @@ public class InventoryItem implements Comparable<InventoryItem>{
             //User must be prompted for the remaining information after using this constructor.
             //Suggested to use isReadyToAdd(InventoryItem) method to check.
         }
-
-    }
-
-    public InventoryItem(String SKU, char type){
-        if(type == 'U' || type == 'u'){
-            this.NEW_ITEM = false;
-        }
-        else{
-            this.NEW_ITEM = true;
-        }
-
-        this.SKU = SKU;
-        this.UPC = TammsDAO.getInstance().getUPCBySKU(this.getSKU());
-        this.TITLE_1 = TammsDAO.getInstance().getTitle_1BySKU(this.getSKU());
-        this.TITLE_2 = TammsDAO.getInstance().getTitle_2BySKU(this.getSKU());
-        this.FORM_CODE = TammsDAO.getInstance().getFORM_CODEBySKU(this.getSKU());
-        this.GENRE_CODE = TammsDAO.getInstance().getGENRE_CODEBySKU(this.getSKU());
-        this.PRICE = strategy.getPrice(this);
-        this.COST = strategy.getCost(this);
 
     }
 
@@ -87,7 +70,6 @@ public class InventoryItem implements Comparable<InventoryItem>{
         this.TITLE_2 = null;
         this.FORM_CODE = FORM_CODE;
         this.GENRE_CODE = GENRE_CODE;
-        this.PRICE = PRICE;
         this.NEW_ITEM = NEW_ITEM;
     }
 
@@ -97,7 +79,6 @@ public class InventoryItem implements Comparable<InventoryItem>{
         this.TITLE_2 = TITLE_2;
         this.FORM_CODE = FORM_CODE;
         this.GENRE_CODE = GENRE_CODE;
-        this.PRICE = PRICE;
         this.NEW_ITEM = NEW_ITEM;
     }
 
@@ -148,11 +129,10 @@ public class InventoryItem implements Comparable<InventoryItem>{
     }
 
     public Double getPRICE() {
-        return PRICE;
-    }
-
-    public void setPRICE(Double PRICE) {
-        this.PRICE = PRICE;
+        if(NEW_ITEM)
+            return NEW_PRICE;
+        else
+            return USED_PRICE;
     }
 
     public boolean isNEW_ITEM() {
@@ -179,26 +159,50 @@ public class InventoryItem implements Comparable<InventoryItem>{
         this.UPC = UPC;
     }
 
-    public Double getCOST() {
-        return COST;
+    public Double getUSED_PRICE() {
+        return USED_PRICE;
     }
 
-    public void setCOST(Double COST) {
-        this.COST = COST;
+    public void setUSED_PRICE(Double USED_PRICE) {
+        this.USED_PRICE = USED_PRICE;
+    }
+
+    public Double getNEW_PRICE() {
+        return NEW_PRICE;
+    }
+
+    public void setNEW_PRICE(Double NEW_PRICE) {
+        this.NEW_PRICE = NEW_PRICE;
+    }
+
+    public Double getUSED_COST() {
+        return USED_COST;
+    }
+
+    public void setUSED_COST(Double USED_COST) {
+        this.USED_COST = USED_COST;
+    }
+
+    public Double getNEW_COST() {
+        return NEW_COST;
+    }
+
+    public void setNEW_COST(Double NEW_COST) {
+        this.NEW_COST = NEW_COST;
     }
 
     @Override
     public String toString(){
-        String result = "SKU: " + getSKU() + " Title: " + getTITLE_1() + " Author/System: " + getTITLE_2() + " Format Code: " + getFORM_CODE() + " Genre Code: " + getGENRE_CODE() + " Price: " + getPRICE();
+        String result = "SKU: " + getSKU() + "\n Title: " + getTITLE_1() + "\n Author/System: " + getTITLE_2() + "\n Format Code: " + getFORM_CODE() + "\n Genre Code: " + getGENRE_CODE() + "\n Price: " + getPRICE();
         return result;
     }
 
     @Override
     public int compareTo(InventoryItem item) {
-        if(item.getPRICE() == this.PRICE){
+        if(item.getPRICE() == this.getPRICE()){
             return 0;
         }
-        else if(item.getPRICE() > this.PRICE){
+        else if(item.getPRICE() > this.getPRICE()){
             return 1;
         }
         else{

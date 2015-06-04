@@ -1,10 +1,10 @@
-package com.launchcode.tamms2.ConsoleTest;
+package com.launchcode.tamms2.consoletest;
 
 import java.util.List;
 import java.util.Scanner;
 
 import com.launchcode.tamms2.dao.TammsDAO;
-import com.launchcode.tamms2.models.InventoryItem;
+import com.launchcode.tamms2.dataobjects.InventoryItem;
 
 /**
  * Created by Gaming on 5/25/2015.

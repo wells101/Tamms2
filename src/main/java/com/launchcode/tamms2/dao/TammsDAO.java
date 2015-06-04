@@ -283,4 +283,147 @@ public class TammsDAO {
             throw new RuntimeException("Error Occurred in: addToCostTable", e);
         }
     }
+
+    public List<String> getFormCodes() {
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT form_code FROM formats");
+            ResultSet myResults = statement.executeQuery();
+            List<String> results = new ArrayList<>();
+            while(myResults.next()){
+                results.add(myResults.getString("form_code"));
+//                results.add(myResults.getString("genre_code"));
+//                results.add(myResults.getString("genre_desc"));
+            }
+            return results;
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
+    public List<String> getGenreCodes() {
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT genre_code FROM genre");
+            ResultSet myResults = statement.executeQuery();
+            List<String> results = new ArrayList<>();
+            while(myResults.next()){
+                results.add(myResults.getString("genre_code"));
+//                results.add(myResults.getString("genre_code"));
+//                results.add(myResults.getString("genre_desc"));
+            }
+            return results;
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+    public int getUsedQTY(String sku) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT qty_used FROM qty WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getInt("qty_used");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: getQTY", e);
+        }
+    }
+
+    public void setUsedPrice(String sku, double price) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("UPDATE price SET price_used = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+        }
+    }
+
+    public double getUsedPrice(String sku) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT price_used FROM price WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getDouble("price_used");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+        }
+    }
+
+    public void setUsedCost(String sku, double price) {
+
+        try (Connection conn = this.getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("UPDATE costs SET cost_used = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: setCost", e);
+        }
+    }
+
+    public double getUsedCost(String sku) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT cost_used FROM costs WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getDouble("cost_used");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: getCost", e);
+        }
+    }
+
+    public int getNewQTY(String sku) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT qty_new FROM qty WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getInt("qty_new");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+        }
+    }
+
+    public void setNewPrice(String sku, double price) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("UPDATE price SET price_new = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: setPrice", e);
+        }
+    }
+
+    public double getNewPrice(String sku) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT price_new FROM price WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getDouble("price_new");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: getPrice", e);
+        }
+    }
+
+    public void setNewCost(String sku, double price) {
+
+        try (Connection conn = this.getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("UPDATE costs SET cost_new = " + price + " WHERE sku = '" + sku + "'");
+            int d = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: setCost", e);
+        }
+    }
+
+    public double getNewCost(String sku) {
+        try(Connection conn = this.getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT cost_new FROM costs WHERE sku = '" + sku + "'");
+            ResultSet results = statement.executeQuery();
+            return results.getDouble("cost_new");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: getCost", e);
+        }
+    }
 }
