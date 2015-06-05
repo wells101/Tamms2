@@ -1,36 +1,38 @@
-///**
-// * Created by Gaming on 5/22/2015.
-// */
-//
-//import com.launchcode.tamms2.consoletest.TammsConsole;
-//import com.launchcode.tamms2.dao.NewItemDAO;
-//import com.launchcode.tamms2.dao.TammsDAO;
-//import com.launchcode.tamms2.dao.UsedItemDAO;
-//import com.launchcode.tamms2.dataobjects.InventoryItem;
-//import com.launchcode.tamms2.dataobjects.SKUManager;
-//import org.junit.Test;
-//import org.junit.Before;
-//
-//import static org.junit.Assert.assertEquals;
-//
-//public class TammsDAOTest {
-//
-//    TammsDAO dao;
+/**
+ * Created by Gaming on 5/22/2015.
+ */
+
+import com.launchcode.tamms2.consoletest.TammsConsole;
+import com.launchcode.tamms2.controller.AddItemController;
+
+        import com.launchcode.tamms2.dao.TammsDAO;
+
+        import com.launchcode.tamms2.dataobjects.InventoryItem;
+        import com.launchcode.tamms2.dataobjects.SKUManager;
+import com.launchcode.tamms2.view.AddItemView;
+import org.junit.Test;
+        import org.junit.Before;
+
+        import static org.junit.Assert.assertEquals;
+
+public class TammsDAOTest {
+
+    TammsDAO dao;
 //    NewItemDAO NIDAO;
 //    UsedItemDAO UIDAO;
-//    TammsConsole app;
-//    InventoryItem testItem;
-//
-//    @Before
-//    public void setUp() throws Exception{
-//        dao = TammsDAO.getInstance();
+    TammsConsole app;
+    InventoryItem testItem;
+
+    @Before
+    public void setUp() throws Exception{
+        dao = TammsDAO.getInstance();
 //        NIDAO = NewItemDAO.getInstance();
 //        UIDAO = UsedItemDAO.getInstance();
-//        app = new TammsConsole();
-//        testItem = new InventoryItem("255000334", "Pokemon:Red Version", "Game Boy", "NGB", "ADV");
+        app = new TammsConsole();
+        testItem = new InventoryItem("255000334", "Pokemon:Red Version", "Game Boy", "NGB", "ADV");
 //        testItem.setPRICE(9.99);
 //        testItem.setCOST(4.50);
-//    }
+    }
 //
 //    @Test
 //    public void testGetSku() throws Exception{
@@ -168,4 +170,9 @@
 //        System.out.println(manager.generateSKU());
 //        System.out.println(manager.generateSKU());
 //    }
-//}
+//
+//    @Test
+//    public void testValidUPC(){
+//        assertEquals(true, dao.validUPC("012000030284"));
+//    }
+}

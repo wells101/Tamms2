@@ -68,4 +68,11 @@ public class PriceFrame extends JPanel {
     public void setUsedCost(String d){
         costUsedField.setText(d);
     }
+
+    public void clearEntries() {
+        priceNewField.setText("");
+        priceUsedField.setText("");
+        costNewField.setText("");
+        costUsedField.setText("");
+    }
 }

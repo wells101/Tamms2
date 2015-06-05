@@ -14,4 +14,8 @@ public class AddItemTransaction {
     public InventoryItem initItem(String upcEntryText) {
         return new InventoryItem(upcEntryText);
     }
+
+    public void addItem(InventoryItem newItem) {
+        TammsDAO.getInstance().addItemWithSKU(newItem);
+    }
 }

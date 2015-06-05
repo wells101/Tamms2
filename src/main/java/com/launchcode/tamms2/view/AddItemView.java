@@ -2,7 +2,6 @@ package com.launchcode.tamms2.view;
 
 import com.launchcode.tamms2.dao.TammsDAO;
 import com.launchcode.tamms2.dataobjects.InventoryItem;
-import com.launchcode.tamms2.dataobjects.SKUManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +15,7 @@ public class AddItemView extends JFrame{
 
     public JTextField UPCField = new JTextField(20);
     private JLabel label = new JLabel("Enter UPC:");
-    private JTextField SKUField = new JTextField(20);
+    public JTextField SKUField = new JTextField(20);
     private JTextField titleField = new JTextField(20);
     private JTextField artistField = new JTextField(20);
     private JComboBox<String> genreBox;
@@ -27,6 +26,8 @@ public class AddItemView extends JFrame{
     private List<String> formCodes = TammsDAO.getInstance().getFormCodes();
     private List<String> genreCodes = TammsDAO.getInstance().getGenreCodes();
     private PriceFrame pFrame = new PriceFrame();
+    private JLabel checkBoxLabelUsed = new JLabel("Used item?");
+    public JCheckBox usedCheck = new JCheckBox();
 
     public AddItemView(){
         super("AddItem");
@@ -66,6 +67,8 @@ public class AddItemView extends JFrame{
         genreBox = new JComboBox<>(new Vector(genres));
         this.add(genreLabel);
         this.add(genreBox);
+        this.add(checkBoxLabelUsed);
+        this.add(usedCheck);
         this.add(pFrame);
         addItemButton.setEnabled(false);
         this.add(addItemButton);
@@ -78,6 +81,10 @@ public class AddItemView extends JFrame{
 
     public void setErrorText(String errorText) {
         JOptionPane.showMessageDialog(this, errorText);
+    }
+
+    public int setConfirmText(String confirmText){
+        return JOptionPane.showConfirmDialog(null, confirmText);
     }
 
     public void updateInformation(InventoryItem foundItem) {
@@ -112,6 +119,7 @@ public class AddItemView extends JFrame{
 
     public InventoryItem generateItem() {
         InventoryItem item = new InventoryItem();
+        item.setUPC(UPCField.getText());
         item.setTITLE_1(titleField.getText());
         item.setTITLE_2(artistField.getText());
         item.setSKU(SKUField.getText());
@@ -121,10 +129,19 @@ public class AddItemView extends JFrame{
         item.setNEW_PRICE(pFrame.getNewPrice());
         item.setUSED_COST(pFrame.getUsedCost());
         item.setNEW_PRICE(pFrame.getNewPrice());
+        item.setNEW_ITEM(!usedCheck.isSelected());
         return item;
     }
 
-    public void assignSKU() {
-        SKUField.setText(Integer.toString(SKUManager.getInstance().generateSKU()));
+    public void clearEntries() {
+        UPCField.setText("");
+        titleField.setText("");
+        SKUField.setText("");
+        artistField.setText("");
+        formatBox.setSelectedIndex(0);
+        genreBox.setSelectedIndex(0);
+        pFrame.clearEntries();
+        addItemButton.setEnabled(false);
+        usedCheck.setSelected(false);
     }
 }

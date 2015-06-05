@@ -64,23 +64,6 @@ public class InventoryItem implements Comparable<InventoryItem>{
         this.GENRE_CODE = GENRE_CODE;
     }
 
-    public InventoryItem(String SKU, String TITLE_1, String FORM_CODE, String GENRE_CODE, Double PRICE, boolean NEW_ITEM) {
-        this.SKU = SKU;
-        this.TITLE_1 = TITLE_1;
-        this.TITLE_2 = null;
-        this.FORM_CODE = FORM_CODE;
-        this.GENRE_CODE = GENRE_CODE;
-        this.NEW_ITEM = NEW_ITEM;
-    }
-
-    public InventoryItem(String SKU, String TITLE_1, String TITLE_2, String FORM_CODE, String GENRE_CODE, Double PRICE, boolean NEW_ITEM) {
-        this.SKU = SKU;
-        this.TITLE_1 = TITLE_1;
-        this.TITLE_2 = TITLE_2;
-        this.FORM_CODE = FORM_CODE;
-        this.GENRE_CODE = GENRE_CODE;
-        this.NEW_ITEM = NEW_ITEM;
-    }
 
     /**
      * Tests to see if an item is ready to add to the database.
@@ -193,11 +176,10 @@ public class InventoryItem implements Comparable<InventoryItem>{
 
     @Override
     public String toString(){
-        String result = "SKU: " + getSKU() + "\n Title: " + getTITLE_1() + "\n Author/System: " + getTITLE_2() + "\n Format Code: " + getFORM_CODE() + "\n Genre Code: " + getGENRE_CODE() + "\n Price: " + getPRICE();
+        String result = "SKU: " + getSKU() + "\n Title: " + getTITLE_1() + "\n Author/System: " + getTITLE_2() + "\n Format Code: " + getFORM_CODE() + "\n Genre Code: " + getGENRE_CODE() + "\n New Price: " + getNEW_PRICE() + "\n Used Price: " + getUSED_PRICE();
         return result;
     }
 
-    @Override
     public int compareTo(InventoryItem item) {
         if(item.getPRICE() == this.getPRICE()){
             return 0;

@@ -121,15 +121,23 @@ public class TammsDAO {
         try(Connection conn = getConnection()){
             PreparedStatement statement = conn.prepareStatement("INSERT INTO items VALUES ('" + item.getSKU() + "', '" + item.getTITLE_1() + "', '" + item.getTITLE_2() + "', '" + item.getFORM_CODE() +"', '" + item.getGENRE_CODE() + "')");
                 int d = statement.executeUpdate();
-                //Since i'm executing two specific types of Operations (New/Used) do i need a Strategy pattern?
-                //You need to add stuff to the item about its other Tables.  They don't know enough.
                 addToQTYTable(item);//Logic for updating QTY/Method call
-                //Logic for updating UPC table
-                //Logic for updating Prices table
-                //Logic for updating Costs table
+                addToUPCTable(item);//Logic for updating UPC table
+                addToPriceTable(item);//Logic for updating Prices table
+                addToCostsTable(item);//Logic for updating Costs table
         }catch(SQLException e){
             e.printStackTrace();
             throw new RuntimeException("Unable to Connect, addItemWithSKU()", e);
+        }
+    }
+
+    private void addToUPCTable(InventoryItem item) {
+        try(Connection conn = getConnection()){
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO UPC VALUES('" + item.getUPC() + "'," + item.getSKU() + ")");
+            int d = statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToUPCTable", e);
         }
     }
 
@@ -247,8 +255,14 @@ public class TammsDAO {
      * @param item
      */
     public void addToQTYTable(InventoryItem item){
+        PreparedStatement statement;
         try(Connection conn = getConnection()){
-            PreparedStatement statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',0,0)");
+            if(item.isNEW_ITEM()){
+                statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',1,0)");
+            }
+            else {
+                statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',0,1)");
+            }
             int d = statement.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
@@ -262,7 +276,7 @@ public class TammsDAO {
      */
     public void addToPriceTable(InventoryItem item){
         try(Connection conn = getConnection()){
-            PreparedStatement statement = conn.prepareStatement("INSERT INTO price VALUES('" + item.getSKU() + "',0.01,0.01)");
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO price VALUES('" + item.getSKU() + "'," + item.getNEW_PRICE() + "," + item.getUSED_PRICE() + ")");
             int d = statement.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
@@ -276,7 +290,7 @@ public class TammsDAO {
      */
     public void addToCostsTable(InventoryItem item) {
         try (Connection conn = getConnection()) {
-            PreparedStatement statement = conn.prepareStatement("INSERT INTO costs VALUES('" + item.getSKU() + "',0.01,0.01)");
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO costs VALUES('" + item.getSKU() + "'," + item.getNEW_COST()+ "," + item.getUSED_COST()+ ")");
             int d = statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -319,6 +333,7 @@ public class TammsDAO {
             throw new RuntimeException("Unable to find Database", e);
         }
     }
+
     public int getUsedQTY(String sku) {
         try(Connection conn = this.getConnection()){
             PreparedStatement statement = conn.prepareStatement("SELECT qty_used FROM qty WHERE sku = '" + sku + "'");
@@ -426,4 +441,6 @@ public class TammsDAO {
             throw new RuntimeException("Error Occurred in: getCost", e);
         }
     }
+
+
 }
