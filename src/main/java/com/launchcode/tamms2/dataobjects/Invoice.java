@@ -47,5 +47,4 @@ public class Invoice {
     public void setTotal(double total) {
         this.total = total;
     }
-
 }

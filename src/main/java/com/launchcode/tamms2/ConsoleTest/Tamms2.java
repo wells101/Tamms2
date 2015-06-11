@@ -16,8 +16,8 @@ public class Tamms2 {
     public static void main(String[] args){
 
         BuyTransactionView view = new BuyTransactionView();
-        BuyTransaction model = new BuyTransaction();
-        BuyTransactionController controller = new BuyTransactionController(model, view);
+        BuyTransaction trans = new BuyTransaction();
+        BuyTransactionController controller = new BuyTransactionController(trans, view);
         controller.show();
 //        AddItemView view = new AddItemView();
 //        AddItemTransaction model = new AddItemTransaction();

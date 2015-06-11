@@ -44,7 +44,7 @@ public class AddItemView extends JFrame{
 
     private void initView(){
         setSize(300, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new GridLayout(0, 2));
         this.add(label);
         this.add(UPCField);

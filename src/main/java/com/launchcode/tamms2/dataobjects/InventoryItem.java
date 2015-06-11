@@ -191,4 +191,8 @@ public class InventoryItem implements Comparable<InventoryItem>{
             return -1;
         }
     }
+
+    public String getCondition() {
+        return this.isNEW_ITEM() ? "New" : "Used";
+    }
 }
