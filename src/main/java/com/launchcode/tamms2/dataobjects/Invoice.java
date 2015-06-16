@@ -31,8 +31,15 @@ public class Invoice {
 
     public void updateTotal(){
         total = 0.00;
-        for(int i = 0; i < myItems.size(); i++){
-            total += myItems.get(i).getPRICE();
+        if(IS_BUY) {
+            for (int i = 0; i < myItems.size(); i++) {
+                total += myItems.get(i).getUSED_COST();
+            }
+        }
+        else{
+            for (int i = 0; i < myItems.size(); i++){
+                total += myItems.get(i).getPRICE();
+            }
         }
     }
 

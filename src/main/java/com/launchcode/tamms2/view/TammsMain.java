@@ -3,7 +3,6 @@ package com.launchcode.tamms2.view;
 import com.launchcode.tamms2.controller.AddItemController;
 import com.launchcode.tamms2.controller.BuyTransactionController;
 import com.launchcode.tamms2.models.AddItemTransaction;
-import com.launchcode.tamms2.models.BuyTransaction;
 
 import javax.swing.*;
 import javax.swing.border.Border;

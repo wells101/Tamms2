@@ -17,6 +17,17 @@ import javax.swing.*;
 public class AddItemController {
     private final AddItemTransaction model;
     private final AddItemView view;
+    public boolean inTransaction = false;
+
+    public boolean isInTransaction() {
+        return inTransaction;
+    }
+
+    public void setInTransaction(boolean inTransaction) {
+        this.inTransaction = inTransaction;
+    }
+
+
 
     public AddItemController(AddItemView view, AddItemTransaction model) {
         this.view = view;
@@ -27,6 +38,7 @@ public class AddItemController {
     }
 
     private void executeAddItem() {
+        System.out.println();
         InventoryItem newItem = view.generateItem();
         if (newItem.isReadyToAdd()) {
             int confirmation = view.setConfirmText("Is this correct? \n" + newItem.toString());
@@ -34,6 +46,10 @@ public class AddItemController {
                 model.addItem(newItem);
                 view.setErrorText("Item Added!");
                 view.clearEntries();
+                if(this.isInTransaction()){view.setVisible(false);}
+                else{
+                    model.recieveItem(newItem);
+                }
             } else {
             }
         }else{

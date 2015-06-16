@@ -4,7 +4,6 @@ import com.launchcode.tamms2.controller.AddItemController;
 
 import com.launchcode.tamms2.controller.BuyTransactionController;
 import com.launchcode.tamms2.models.AddItemTransaction;
-import com.launchcode.tamms2.models.BuyTransaction;
 import com.launchcode.tamms2.view.AddItemView;
 import com.launchcode.tamms2.view.BuyTransactionView;
 import com.launchcode.tamms2.view.TammsMain;
@@ -21,9 +20,8 @@ public class Tamms2 {
 //        AddItemController controller = new AddItemController(view, model);
 //        controller.show();
 
-        BuyTransaction buyTrans = new BuyTransaction();
         BuyTransactionView buyview = new BuyTransactionView();
-        BuyTransactionController controller = new BuyTransactionController(buyTrans, buyview);
+        BuyTransactionController controller = new BuyTransactionController(buyview);
 
         controller.show();
 

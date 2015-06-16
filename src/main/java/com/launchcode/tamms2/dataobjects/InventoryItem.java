@@ -195,4 +195,13 @@ public class InventoryItem implements Comparable<InventoryItem>{
     public String getCondition() {
         return this.isNEW_ITEM() ? "New" : "Used";
     }
+
+    public void setPrice(double price) {
+        if(this.isNEW_ITEM()){
+            this.setNEW_PRICE(price);
+        }
+        else{
+            this.setUSED_PRICE(price);
+        }
+    }
 }

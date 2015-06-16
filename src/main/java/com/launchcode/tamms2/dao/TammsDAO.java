@@ -4,6 +4,7 @@ package com.launchcode.tamms2.dao;
  * Created by Gaming on 5/22/2015.
  */
 import com.launchcode.tamms2.dataobjects.InventoryItem;
+import com.launchcode.tamms2.dataobjects.Invoice;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -258,10 +259,10 @@ public class TammsDAO {
         PreparedStatement statement;
         try(Connection conn = getConnection()){
             if(item.isNEW_ITEM()){
-                statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',1,0)");
+                statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',0,0)");
             }
             else {
-                statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',0,1)");
+                statement = conn.prepareStatement("INSERT INTO qty VALUES('" + item.getSKU() + "',0,0)");
             }
             int d = statement.executeUpdate();
         }catch(SQLException e){
@@ -270,6 +271,26 @@ public class TammsDAO {
         }
     }
 
+    public void adjustQTY(InventoryItem item, int qty){
+        try(Connection conn = getConnection()){
+            PreparedStatement statement;
+            int currentQTY = 0;
+            if(item.isNEW_ITEM()){
+                currentQTY = getNewQTY(item.getSKU());
+                int newQTY = currentQTY + qty;
+                statement = conn.prepareStatement("UPDATE qty SET qty_new = " + newQTY + " WHERE sku = '" + item.getSKU() + "'");
+            }
+            else{
+                currentQTY = getUsedQTY(item.getSKU());
+                int newQTY = currentQTY + qty;
+                statement = conn.prepareStatement("UPDATE qty SET qty_used = " + newQTY + " WHERE sku = '" + item.getSKU() + "'");
+            }
+            int d = statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Error Occurred in: addToQTYTable", e);
+        }
+    }
     /**
      * Add a new Item to the PRICES table, defaults to 0.01 New Price and 0.01 Used Price
      * @param item - an InventoryItem.
@@ -443,4 +464,16 @@ public class TammsDAO {
     }
 
 
+    public void processInvoice(Invoice invoice) {
+        if (invoice.IS_BUY()){
+            for(int i = 0; i < invoice.getMyItems().size(); i++) {
+                this.adjustQTY(invoice.getMyItems().get(i), 1);
+            }
+        }
+        else{
+            for(int i = 0; i < invoice.getMyItems().size(); i++){
+                this.adjustQTY(invoice.getMyItems().get(i), -1);
+            }
+        }
+    }
 }

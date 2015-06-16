@@ -18,4 +18,8 @@ public class AddItemTransaction {
     public void addItem(InventoryItem newItem) {
         TammsDAO.getInstance().addItemWithSKU(newItem);
     }
+
+    public void recieveItem(InventoryItem newItem) {
+        TammsDAO.getInstance().adjustQTY(newItem, 1);
+    }
 }
