@@ -22,6 +22,26 @@ public class InventoryItem implements Comparable<InventoryItem>{
     public InventoryItem() {
     }
 
+    public InventoryItem(String SKU, char condition){
+//        Item must be validated for SKU before using this constructor
+//        ALWAYS constructs a completed item, even if the SKU is not in the database.
+        this.SKU = SKU;
+        this.UPC = TammsDAO.getInstance().getUPCBySKU(this.getSKU());
+        this.TITLE_1 = TammsDAO.getInstance().getTitle_1BySKU(this.getSKU());
+        this.TITLE_2 = TammsDAO.getInstance().getTitle_2BySKU(this.getSKU());
+        this.FORM_CODE = TammsDAO.getInstance().getFORM_CODEBySKU(this.getSKU());
+        this.GENRE_CODE = TammsDAO.getInstance().getGENRE_CODEBySKU(this.getSKU());
+        this.NEW_PRICE = TammsDAO.getInstance().getNewPrice(this.getSKU());
+        this.NEW_COST = TammsDAO.getInstance().getNewCost(this.getSKU());
+        this.USED_PRICE = TammsDAO.getInstance().getUsedPrice(this.getSKU());
+        this.USED_COST = TammsDAO.getInstance().getUsedCost(this.getSKU());
+        if(condition == 'N' || condition == 'n'){
+            this.NEW_ITEM = true;
+        }
+        else{
+            this.NEW_ITEM = false;
+        }
+    }
     /**
      * Create a new item by UPC.  Buying an item ALWAYS uses the UPC.
      * This is an external rule enforced by VStock management.

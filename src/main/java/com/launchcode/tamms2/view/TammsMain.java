@@ -2,6 +2,7 @@ package com.launchcode.tamms2.view;
 
 import com.launchcode.tamms2.controller.AddItemController;
 import com.launchcode.tamms2.controller.BuyTransactionController;
+import com.launchcode.tamms2.controller.SellTransactionController;
 import com.launchcode.tamms2.models.AddItemTransaction;
 
 import javax.swing.*;
@@ -29,15 +30,20 @@ public class TammsMain extends JFrame{
         this.add(navPanel, BorderLayout.CENTER);
 
         addButton.addActionListener(e -> openAddPanel());
-        buyButton.addActionListener(e->openBuyPanel());
+        buyButton.addActionListener(e -> openBuyPanel());
+        sellButton.addActionListener(e -> openSellPanel());
+    }
 
+    private void openSellPanel() {
+        SellTransactionView sellView = new SellTransactionView();
+        SellTransactionController sellCont = new SellTransactionController(sellView);
+        sellCont.show();
     }
 
     private void openBuyPanel() {
-//
-//        BuyTransactionView buyView = new BuyTransactionView();
-//        BuyTransactionController buyCont = new BuyTransactionController(buyView);
-//        buyCont.show();
+        BuyTransactionView buyView = new BuyTransactionView();
+        BuyTransactionController buyCont = new BuyTransactionController(buyView);
+        buyCont.show();
     }
 
     private void openAddPanel() {

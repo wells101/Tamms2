@@ -3,9 +3,11 @@ package com.launchcode.tamms2;
 import com.launchcode.tamms2.controller.AddItemController;
 
 import com.launchcode.tamms2.controller.BuyTransactionController;
+import com.launchcode.tamms2.controller.SellTransactionController;
 import com.launchcode.tamms2.models.AddItemTransaction;
 import com.launchcode.tamms2.view.AddItemView;
 import com.launchcode.tamms2.view.BuyTransactionView;
+import com.launchcode.tamms2.view.SellTransactionView;
 import com.launchcode.tamms2.view.TammsMain;
 
 /**
@@ -20,14 +22,18 @@ public class Tamms2 {
 //        AddItemController controller = new AddItemController(view, model);
 //        controller.show();
 
-        BuyTransactionView buyview = new BuyTransactionView();
-        BuyTransactionController controller = new BuyTransactionController(buyview);
+//        SellTransactionView view = new SellTransactionView();
+//        SellTransactionController cont = new SellTransactionController(view);
+//        cont.show();
 
-        controller.show();
+//        BuyTransactionView buyview = new BuyTransactionView();
+//        BuyTransactionController controller = new BuyTransactionController(buyview);
+//
+//        controller.show();
 
-//
-//        TammsMain main = new TammsMain();
-//
-//        main.start();
+
+        TammsMain main = new TammsMain();
+
+        main.start();
     }
 }
