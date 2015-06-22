@@ -67,7 +67,5 @@ public class TransactionTableModel extends AbstractTableModel{
         double thePrice = Double.parseDouble(newPrice);
         invoice.getMyItems().get(row).setPrice(thePrice);
         fireTableCellUpdated(row, col);
-//        test code starts here
-//        System.out.println(invoice.getMyItems().get(row).getPRICE());
     }
 }

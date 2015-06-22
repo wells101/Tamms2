@@ -462,7 +462,6 @@ public class TammsDAO {
         }
     }
 
-
     public void processInvoice(Invoice invoice) {
         if (invoice.IS_BUY()){
             for(int i = 0; i < invoice.getMyItems().size(); i++) {
@@ -508,5 +507,38 @@ public class TammsDAO {
             throw new RuntimeException("Unable to find Database", e);
         }
 
+    }
+
+    //Search methods start here
+    public List<InventoryItem> searchByTitle_1(String searchTerm){
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT sku FROM items WHERE title_1 LIKE '%" + searchTerm + "%'");
+            ResultSet myResults = statement.executeQuery();
+            List<InventoryItem> results = new ArrayList<>();
+            while(myResults.next()){
+                results.add(new InventoryItem(myResults.getString("sku"), 'u'));
+            }
+            return results;
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
+    public List<InventoryItem> searchByTitle_2(String searchTerm){
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT sku FROM items WHERE title_2 LIKE '%" + searchTerm + "%'");
+            ResultSet myResults = statement.executeQuery();
+            List<InventoryItem> results = new ArrayList<>();
+            while(myResults.next()){
+                results.add(new InventoryItem(myResults.getString("sku"), 'u'));
+            }
+            return results;
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
     }
 }

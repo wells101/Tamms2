@@ -63,28 +63,34 @@ public class BuyTransactionController implements TransactionController{
             view.tableModel.fireTableDataChanged();
         }
         else if(TammsDAO.getInstance().itemInDatabase(itemNumber)){
-            model.addItem(new InventoryItem(TammsDAO.getInstance().getUPCBySKU(itemNumber)));//hey, put in the logic to accept SKUs for bulk items here.
+            model.addItem(new InventoryItem(TammsDAO.getInstance().getUPCBySKU(itemNumber)));
             view.inputField.setText("");
             view.tableModel.fireTableDataChanged();
         }
         else {
             if (view.setConfirmationText("UPC " + itemNumber + " not found.  Add Item?") == JOptionPane.YES_OPTION) {
-                AddItemView addView = new AddItemView();
-                AddItemTransaction addTrans = new AddItemTransaction();
-                AddItemController addCont = new AddItemController(addView, addTrans);//Call up AddItemView to add item.
-                addCont.show();
-                addView.UPCField.setText(view.inputField.getText());
-                addCont.setInTransaction(true);
+                startAddItem();
             }
             else if(view.setConfirmationText("Use a bulk SKU?") == JOptionPane.YES_OPTION){
-//                     Logic for selecting a bulk SKU to add.
-//                     Cancel does nothing. Use
-                String bulkItem = (String) JOptionPane.showInputDialog(view, "Select Bulk SKU: ", "Bulk Option", JOptionPane.QUESTION_MESSAGE, null, bulkSkus, bulkSkus[0]);
-                model.addItem(new InventoryItem(TammsDAO.getInstance().getSKUByTitle_1(bulkItem), 'u'));
-                view.tableModel.fireTableDataChanged();
+                startAddBulkItem();
             }
 
         }
         view.totalPane.updateTotal(model);
+    }
+
+    private void startAddBulkItem() {
+        String bulkItem = (String) JOptionPane.showInputDialog(view, "Select Bulk SKU: ", "Bulk Option", JOptionPane.QUESTION_MESSAGE, null, bulkSkus, bulkSkus[0]);
+        model.addItem(new InventoryItem(TammsDAO.getInstance().getSKUByTitle_1(bulkItem), 'u'));
+        view.tableModel.fireTableDataChanged();
+    }
+
+    private void startAddItem() {
+        AddItemView addView = new AddItemView();
+        AddItemTransaction addTrans = new AddItemTransaction();
+        AddItemController addCont = new AddItemController(addView, addTrans);//Call up AddItemView to add item.
+        addCont.show();
+        addView.UPCField.setText(view.inputField.getText());
+        addCont.setInTransaction(true);
     }
 }

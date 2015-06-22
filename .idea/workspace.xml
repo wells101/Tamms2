@@ -2,37 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="919991b1-dcb6-4fef-8830-7a7b3697129d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TotalPane.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/TransactionController.java" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\inventory.db-journal" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\ConsoleTest\ListenerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\ConsoleTest\Tamms2.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\ConsoleTest\TammsConsole.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\models\BuyTransactionTableModel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\view\BuyTransactionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\view\SellTransactionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\test\java\TammsDAOTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\ConsoleTest\ListenerTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\ConsoleTest\ListenerTest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\ConsoleTest\Tamms2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\ConsoleTest\TammsConsole.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\view\BuyTransactionView.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\view\SellTransactionView.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Gaming\Documents\Tamms2\target\test-classes\TammsDAOTest.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Gaming\Documents\Tamms2\src\main\java\com\launchcode\tamms2\models\SellTransactionTableModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java" />
-      <change type="MODIFICATION" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\controller\BuyTransactionController.class" afterPath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\controller\BuyTransactionController.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\models\BuyTransactionTableModel.class" afterPath="C:\Users\Gaming\Documents\Tamms2\target\classes\com\launchcode\tamms2\models\BuyTransactionTableModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/controller/SellTransactionController.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/controller/SellTransactionController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/Tamms2.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/Tamms2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchBarPanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SearchController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/SearchTableModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/controller/BuyTransactionController.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/controller/BuyTransactionController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/dao/TammsDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/dao/TammsDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/view/TammsMain.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/view/TammsMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/view/TransactionView.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/view/TransactionView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/models/TransactionTableModel.class" afterPath="$PROJECT_DIR$/target/classes/com/launchcode/tamms2/models/TransactionTableModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SellTransactionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SellTransactionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/Tamms2.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/Tamms2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TransactionView.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TransactionView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inventory.db" afterPath="$PROJECT_DIR$/inventory.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -62,26 +43,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TransactionTableModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuyTransactionController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62286687">
-              <caret line="83" column="55" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AddItemView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/AddItemView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -94,22 +55,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TammsDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java">
+      <file leaf-file-name="BuyTransactionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="505" column="31" selection-start-line="505" selection-start-column="31" selection-end-line="505" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/InventoryItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-              <folding />
+              <caret line="65" column="93" selection-start-line="65" selection-start-column="93" selection-end-line="65" selection-end-column="93" />
+              <folding>
+                <element signature="method#BuyTransactionController#0;class#BuyTransactionController#0" expanded="false" />
+                <element signature="method#show#0;class#BuyTransactionController#0" expanded="false" />
+                <element signature="method#executeCheckout#0;class#BuyTransactionController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,25 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TransactionView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#957#958#0" expanded="true" />
-                <element signature="e#994#995#0" expanded="true" />
-                <element signature="e#1024#1025#0" expanded="true" />
-                <element signature="e#1062#1063#0" expanded="true" />
-                <element signature="e#1815#1816#0" expanded="true" />
-                <element signature="e#1869#1870#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransactionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/TransactionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,31 +81,123 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TotalPane.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TotalPane.java">
+      <file leaf-file-name="TammsDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+              <caret line="520" column="0" selection-start-line="520" selection-start-column="0" selection-end-line="520" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
-                <element signature="e#1247#1248#0" expanded="true" />
+                <element signature="docComment;method#getInstance#0;class#TammsDAO#0" expanded="false" />
+                <element signature="docComment;method#getConnection#0;class#TammsDAO#0" expanded="false" />
+                <element signature="docComment;method#getTitle_1BySKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getTitle_1BySKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getTitle_2BySKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getFORM_CODEBySKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getGENRE_CODEBySKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getUPCBySKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getSKUByUPC#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#addItemWithSKU#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#addToUPCTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#itemInDatabase#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#upcInDatabase#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#itemInTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getFormats#0;class#TammsDAO#0" expanded="false" />
+                <element signature="e#8308#8372#0" expanded="false" />
+                <element signature="e#9096#9161#0" expanded="false" />
+                <element signature="docComment;method#addToQTYTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#addToQTYTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#adjustQTY#0;class#TammsDAO#0" expanded="false" />
+                <element signature="docComment;method#addToPriceTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#addToPriceTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="docComment;method#addToCostsTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#addToCostsTable#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getFormCodes#0;class#TammsDAO#0" expanded="false" />
+                <element signature="e#12859#12924#0" expanded="false" />
+                <element signature="method#getGenreCodes#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#setUsedPrice#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getUsedPrice#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#setUsedCost#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getUsedCost#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getNewQTY#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#setNewPrice#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getNewPrice#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#setNewCost#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getNewCost#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#processInvoice#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getBulkSkus#0;class#TammsDAO#0" expanded="false" />
+                <element signature="method#getSKUByTitle_1#0;class#TammsDAO#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Invoice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java">
+      <file leaf-file-name="SearchTableModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/SearchTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-                <element signature="e#1777#1778#0" expanded="true" />
-                <element signature="e#1820#1821#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#570#571#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
+                <element signature="e#879#880#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchBarPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchBarPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1135#1136#0" expanded="true" />
+                <element signature="e#1179#1180#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5580589">
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1187#1188#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TammsMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,11 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tammsDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/tammsDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testclass.java" />
-        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/Tamms2MainWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/Tamms2MainWindow.form" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/SellWindow.form" />
@@ -241,15 +265,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/BuyTransactionView.java" />
         <option value="$PROJECT_DIR$/src/test/java/TammsDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/Tamms2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/BuyTransactionTableModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TransactionView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SellTransactionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TotalPane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchBarFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/SearchTableModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchBarPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SearchController.java" />
       </list>
     </option>
   </component>
@@ -306,10 +335,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-14" />
+    <option name="y" value="10" />
     <option name="width" value="1394" />
-    <option name="height" value="916" />
+    <option name="height" value="907" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -334,9 +363,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -551,6 +577,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches">
+        <subPane />
+      </pane>
       <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
@@ -595,6 +624,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -914,8 +944,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1394" height="916" extended-state="7" />
-    <editor active="true" />
+    <frame x="-14" y="10" width="1394" height="907" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -924,13 +954,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946298" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39900866" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23915738" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961586" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24185464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2264151" sideWeight="0.49566296" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283767" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -939,8 +967,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39900866" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946298" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283767" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -965,7 +995,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -974,6 +1004,39 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/TransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TotalPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding>
+            <element signature="e#1777#1778#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -994,7 +1057,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#setUpLists#0;class#AddItemView#0" expanded="false" />
-            <element signature="method#initView#0;class#AddItemView#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1198,17 +1260,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
           <folding>
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,15 +1270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3327645">
           <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,25 +1295,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-          <folding>
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#1777#1778#0" expanded="true" />
-            <element signature="e#1820#1821#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/AddItemController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1604096">
           <caret line="66" column="69" selection-start-line="66" selection-start-column="69" selection-end-line="66" selection-end-column="69" />
           <folding>
             <element signature="docComment;class#AddItemController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/Invoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80359435">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding>
+            <element signature="e#1777#1778#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/InventoryItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/TransactionTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6110398">
+          <caret line="61" column="5" selection-start-line="45" selection-start-column="4" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="method#isCellEditable#0;class#TransactionTableModel#0" expanded="false" />
+            <element signature="method#getValueAt#0;class#TransactionTableModel#0" expanded="false" />
+            <element signature="method#setValueAt#0;class#TransactionTableModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1283,17 +1346,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="505" column="31" selection-start-line="505" selection-start-column="31" selection-end-line="505" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/TransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.2182285">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1301,10 +1356,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dataobjects/InventoryItem.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+          <caret line="65" column="93" selection-start-line="65" selection-start-column="93" selection-end-line="65" selection-end-column="93" />
+          <folding>
+            <element signature="method#BuyTransactionController#0;class#BuyTransactionController#0" expanded="false" />
+            <element signature="method#show#0;class#BuyTransactionController#0" expanded="false" />
+            <element signature="method#executeCheckout#0;class#BuyTransactionController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TammsMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1312,24 +1379,111 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/TransactionView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#994#995#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-            <element signature="e#1869#1870#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/BuyTransactionController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62286687">
-          <caret line="83" column="55" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/models/SearchTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/view/SearchBarPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/dao/TammsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="520" column="0" selection-start-line="520" selection-start-column="0" selection-end-line="520" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#getInstance#0;class#TammsDAO#0" expanded="false" />
+            <element signature="docComment;method#getConnection#0;class#TammsDAO#0" expanded="false" />
+            <element signature="docComment;method#getTitle_1BySKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getTitle_1BySKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getTitle_2BySKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getFORM_CODEBySKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getGENRE_CODEBySKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getUPCBySKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getSKUByUPC#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#addItemWithSKU#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#addToUPCTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#itemInDatabase#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#upcInDatabase#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#itemInTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getFormats#0;class#TammsDAO#0" expanded="false" />
+            <element signature="e#8308#8372#0" expanded="false" />
+            <element signature="e#9096#9161#0" expanded="false" />
+            <element signature="docComment;method#addToQTYTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#addToQTYTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#adjustQTY#0;class#TammsDAO#0" expanded="false" />
+            <element signature="docComment;method#addToPriceTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#addToPriceTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="docComment;method#addToCostsTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#addToCostsTable#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getFormCodes#0;class#TammsDAO#0" expanded="false" />
+            <element signature="e#12859#12924#0" expanded="false" />
+            <element signature="method#getGenreCodes#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#setUsedPrice#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getUsedPrice#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#setUsedCost#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getUsedCost#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getNewQTY#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#setNewPrice#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getNewPrice#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#setNewCost#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getNewCost#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#processInvoice#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getBulkSkus#0;class#TammsDAO#0" expanded="false" />
+            <element signature="method#getSKUByTitle_1#0;class#TammsDAO#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/launchcode/tamms2/controller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5580589">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

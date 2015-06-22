@@ -2,6 +2,7 @@ package com.launchcode.tamms2.view;
 
 import com.launchcode.tamms2.controller.AddItemController;
 import com.launchcode.tamms2.controller.BuyTransactionController;
+import com.launchcode.tamms2.controller.SearchController;
 import com.launchcode.tamms2.controller.SellTransactionController;
 import com.launchcode.tamms2.dataobjects.Invoice;
 import com.launchcode.tamms2.models.AddItemTransaction;
@@ -16,6 +17,7 @@ public class TammsMain extends JFrame{
     private JButton sellButton = new JButton("Sell");
     private JButton buyButton = new JButton("Buy");
     private JButton addButton = new JButton("Add Items");
+    private JButton searchButton = new JButton("Search Items");
     private JPanel navPanel = new JPanel();
 
     public TammsMain(){
@@ -23,15 +25,23 @@ public class TammsMain extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.setSize(500, 300);
-        navPanel.setLayout(new GridLayout(3, 1));
+        navPanel.setLayout(new GridLayout(4, 1));
         navPanel.add(buyButton);
         navPanel.add(sellButton);
+        navPanel.add(searchButton);
         navPanel.add(addButton);
         this.add(navPanel, BorderLayout.CENTER);
 
-        addButton.addActionListener(e -> openAddPanel());
+
         buyButton.addActionListener(e -> openBuyPanel());
         sellButton.addActionListener(e -> openSellPanel());
+        searchButton.addActionListener(e -> openSearchPanel());
+        addButton.addActionListener(e -> openAddPanel());
+    }
+
+    private void openSearchPanel() {
+        SearchController search = new SearchController();
+        search.show();
     }
 
     private void openSellPanel() {
