@@ -5,16 +5,17 @@ import com.launchcode.tamms2.dataobjects.Invoice;
 
 import javax.swing.table.AbstractTableModel;
 
+
 /**
- * Created by Gaming on 6/17/2015.
+ * Created by Gaming on 6/10/2015.
  */
-public class SellTransactionTableModel extends AbstractTableModel {
+public class TransactionTableModel extends AbstractTableModel{
+
     private final Invoice invoice;
     private final String[] columns = {"SKU", "Title", "Condition", "Price"};
 
-    public SellTransactionTableModel(Invoice i){
+    public TransactionTableModel(Invoice i){
         this.invoice = i;
-        invoice.setIS_BUY(false);
     }
 
     @Override
@@ -49,7 +50,13 @@ public class SellTransactionTableModel extends AbstractTableModel {
             case 0: return item.getSKU();
             case 1: return item.getTITLE_1();
             case 2: return item.getCondition();
-            case 3: return Double.toString(item.getPRICE());
+            case 3:
+                if(invoice.IS_BUY()){
+                    return Double.toString(item.getUSED_COST());
+                }
+                else{
+                    return Double.toString(item.getPRICE());
+                }
         }
         return null;
     }

@@ -12,6 +12,7 @@ public class Invoice {
     private List<InventoryItem> myItems = new ArrayList<>();
     private double total = 0.00;
     private boolean IS_BUY = false;
+    private double taxRate = 0.0725;
 
     public boolean IS_BUY() {
         return IS_BUY;
@@ -30,16 +31,18 @@ public class Invoice {
     }
 
     public void updateTotal(){
-        total = 0.00;
         if(IS_BUY) {
+            total = 0.00;
             for (int i = 0; i < myItems.size(); i++) {
                 total += myItems.get(i).getUSED_COST();
             }
         }
         else{
+            total = 0.00;
             for (int i = 0; i < myItems.size(); i++){
                 total += myItems.get(i).getPRICE();
             }
+            total = total * taxRate;
         }
     }
 
@@ -47,11 +50,30 @@ public class Invoice {
         myItems.add(item);
     }
 
+    public double getSubTotal(){
+        double subTotal = 0.00;
+        if(IS_BUY) {
+            for (int i = 0; i < myItems.size(); i++) {
+                subTotal += myItems.get(i).getUSED_COST();
+            }
+        }
+        else{
+            for (int i = 0; i < myItems.size(); i++){
+                subTotal += myItems.get(i).getPRICE();
+            }
+        }
+        return subTotal;
+    }
     public double getTotal() {
+        this.updateTotal();
         return total;
     }
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public double getTax() {
+        return getTotal() * taxRate;
     }
 }

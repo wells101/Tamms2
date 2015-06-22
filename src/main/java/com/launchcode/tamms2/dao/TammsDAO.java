@@ -8,6 +8,7 @@ import com.launchcode.tamms2.dataobjects.Invoice;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TammsDAO {
@@ -344,8 +345,6 @@ public class TammsDAO {
             List<String> results = new ArrayList<>();
             while(myResults.next()){
                 results.add(myResults.getString("genre_code"));
-//                results.add(myResults.getString("genre_code"));
-//                results.add(myResults.getString("genre_desc"));
             }
             return results;
         }catch(SQLException e)
@@ -475,5 +474,39 @@ public class TammsDAO {
                 this.adjustQTY(invoice.getMyItems().get(i), -1);
             }
         }
+    }
+
+    public String[] getBulkSkus() {
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT title_1 FROM items WHERE title_1 LIKE '%BULK%'");
+            ResultSet myResults = statement.executeQuery();
+            List<String> results = new ArrayList<>();
+            while(myResults.next()){
+                results.add(myResults.getString("title_1"));
+            }
+            Collections.sort(results);
+            String[] returningArray = new String[results.size()];
+            for(int i = 0; i < results.size(); i++) {
+                returningArray[i] = results.get(i);
+            }
+
+            return returningArray;
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+    }
+
+    public String getSKUByTitle_1(String bulkItem) {
+        try(Connection conn = getConnection()) {
+            PreparedStatement statement = conn.prepareStatement("SELECT sku FROM items WHERE title_1 = '" + bulkItem + "'");
+            ResultSet myResults = statement.executeQuery();
+            return myResults.getString("sku");
+        }catch(SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException("Unable to find Database", e);
+        }
+
     }
 }
